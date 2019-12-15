@@ -30,6 +30,23 @@ router.get('/', async (req, res) => {
   }
 });
 
+// Updates a user by id
+router.patch('/:id', getUser, async (req, res) => {
+  if (req.body.name != null) {
+    res.user.name = req.body.name;
+  }
+  if (req.body.email != null) {
+    res.user.email = req.body.email;
+  }
+
+  try {
+    const updatedUser = await res.user.save();
+    res.json(updatedUser);
+  } catch(e) {
+    res.status(400).json({ message: e.message });
+  }
+});
+
 // Get user by id
 router.get('/:id', getUser, (req, res) => {
   res.json(res.user);

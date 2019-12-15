@@ -1,8 +1,13 @@
+
+DELETE http://localhost:3000/user/5df69d252f6f7d04f4dee6f2
+
+###
+
 GET http://localhost:3000/user
 
 ###
 
-GET http://localhost:3000/user/5df69d012f6f7d04f4dee6f1
+GET http://localhost:3000/user/5df69d252f6f7d04f4dee6f2
 
 ###
 
@@ -16,13 +21,9 @@ Content-Type: application/json
 
 ###
 
-PATCH http://localhost:3000/user/5df69d012f6f7d04f4dee6f1
+PATCH http://localhost:3000/user/5df6a9a9a4e8041ac8baa7c0
 Content-Type: application/json
 
 {
-  "name": "Novo Nome",
+  "name": "Novo Nooome"
 }
-
-###
-
-DELETE http://localhost:3000/user/5df69d012f6f7d04f4dee6f1

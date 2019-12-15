@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv').config(); // Allow access to the .env configs.
 
 const express = require('express');
 const app = express();
@@ -10,8 +10,8 @@ const db = mongoose.connection;
 db.once('open', () => console.log('MongoDB: Connected.'));
 db.on('error', (error) => console.error('MongoDB: Error to connect.', error));
 
-app.use(express.json());
+app.use(express.json()); // Allows the API to send the req/res body as json.
 app.listen(3000, () => console.log('Server Started'));
 
-const crudRouter = require('./routes/crud');
-app.use('/crud', crudRouter);
+const userRouter = require('./routes/user');
+app.use('/user', userRouter);
